@@ -2,34 +2,78 @@
     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
       <li class="nav-item">
         <router-link to="/dashboard" class="nav-link">
-          <i class="nav-icon fas fa-tachometer-alt blue"></i>
+          <i class="nav-icon fas fa-home blue"></i>
           <p>
             Dashboard
           </p>
         </router-link>
       </li>
 
-      <li class="nav-item">
+      {{-- <li class="nav-item">
         <router-link to="/products" class="nav-link">
           <i class="nav-icon fas fa-list orange"></i>
           <p>
             Product
           </p>
         </router-link>
+      </li> --}}
+
+      <li class="nav-item has-treeview">
+        <a href="#" class="nav-link">
+          <i class="fa fa-users nav-icon blue"></i>
+          <p>
+            Staff
+            <i class="right fas fa-angle-left"></i>
+          </p>
+        </a>
+        <ul class="nav nav-treeview">
+
+          <li class="nav-item">
+            <router-link to="/employees" class="nav-link">
+              <i class="fa fa-users nav-icon blue"></i>
+              <p>
+                Employee
+              </p>
+            </router-link>
+          </li>
+          @can('isAdmin')
+          <li class="nav-item">
+            <router-link to="/workbase" class="nav-link">
+              <i class="nav-icon fa fa-building nav-icon blue"></i>
+              <p>
+                Work Base
+              </p>
+            </router-link>
+          </li>
+          <li class="nav-item">
+            <router-link to="/purchase-orders" class="nav-link">
+              <i class="nav-icon fa fa-file nav-icon blue"></i>
+              <p>
+                Purchase Order
+              </p>
+            </router-link>
+          </li>
+          <li class="nav-item">
+            <router-link to="#" class="nav-link">
+              <i class="nav-icon fa fa-envelope-open nav-icon blue"></i>
+              <p>
+                Offer Letter
+              </p>
+            </router-link>
+          </li>
+          @endcan
+        </ul>
       </li>
 
       @can('isAdmin')
         <li class="nav-item">
           <router-link to="/users" class="nav-link">
-            <i class="fa fa-users nav-icon blue"></i>
+            <i class="fa fa-user nav-icon blue"></i>
             <p>Users</p>
           </router-link>
         </li>
       @endcan
-
-      
-
-      @can('isAdmin')
+      {{-- @can('isRecruiter' || 'isAdmin')
       <li class="nav-item has-treeview">
         <a href="#" class="nav-link">
           <i class="nav-icon fas fa-cog green"></i>
@@ -68,7 +112,7 @@
         </ul>
       </li>
 
-      @endcan
+      @endcan --}}
       
       
 

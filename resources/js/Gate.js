@@ -11,9 +11,12 @@ export default class Gate{
     isUser(){
         return this.user.type === 'user';
     }
-    
-    isAdminOrUser(){
-        if(this.user.type === 'user' || this.user.type === 'admin'){
+    isRecruiter(){
+        return this.user.type === 'recruiter';
+    }
+
+    isAdminOrUserOrRecruiter(){
+        if(this.user.type === 'user' || this.user.type === 'admin' || this.user.type === 'recruiter'){
             return true;
         }
     }
